@@ -38,3 +38,6 @@ Usage
 Enter text into the provided input field.
 Click the "Analyze Sentiment" button.
 View the sentiment score and magnitude displayed below the form.
+
+![image](https://github.com/user-attachments/assets/a8d97e41-5bab-45da-9a64-8b11e2f41f6d)
+
