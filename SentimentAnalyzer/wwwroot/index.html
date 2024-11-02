@@ -8,6 +8,15 @@
     <script>
         async function analyzeSentiment() {
             const text = document.getElementById('textInput').value;
+            const errorMessageDisplay = document.getElementById('error-message');
+
+            if (!text) {
+                errorMessageDisplay.textContent = "Please enter some text for analysis.";
+                errorMessageDisplay.style.display = "block"; 
+                return;
+            } else {
+                errorMessageDisplay.style.display = "none"; 
+            }
 
             try {
                 const response = await fetch('/api/sentiment/analyze', {
@@ -64,6 +73,7 @@
     <h1>Sentiment Analysis</h1>
     <textarea id="textInput" rows="4" cols="50" placeholder="Enter the text for analysis..."></textarea><br>
     <button onclick="analyzeSentiment()">Analyze Sentiment</button>
+    <div id="error-message" style="color: red; display: none;"></div>
     <h2>Result:</h2>
     <pre id="result"></pre>
 </body>
